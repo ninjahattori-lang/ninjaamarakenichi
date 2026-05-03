@@ -1,31 +1,19 @@
-document.getElementById("censusForm").addEventListener("submit", async function(e){
+document.addEventListener("DOMContentLoaded", function() {
     
-    e.preventDefault();
+    console.log("✅ Script Loaded Successfully");
 
-    const formData = new FormData(this);
-    const data = {};
-
-    for (let [key, value] of formData.entries()) {
-        if(data[key]){
-            data[key] += ", " + value;
-        }
-        else{
-            data[key] = value;
-        }
-    }
-
-    console.log(data);
-
-    try {
-        await fetch("https://script.google.com/macros/s/AKfycbyNf5npWvzgoNSutHpX5Lr5Ut5DzJhObyBCVG4oV19n78zpFAvhD4jfaEp2DkKruQCicA/exec",{
-            method:"POST",
-            body: JSON.stringify(data)
+    const form = document.getElementById("censusForm");
+    
+    if (form) {
+        console.log("✅ Form Found");
+        
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            console.log("✅ Submit Button Clicked!");
+            alert("Form Submit is Working! ✅");
         });
-
-        alert("Survey Saved Successfully!");
-        document.getElementById("censusForm").reset();
-    } catch (error) {
-        console.error("Error:", error);
-        alert("Error saving data. Please check your internet or script URL.");
+    } else {
+        console.log("❌ Form Not Found");
+        alert("Form ID not found!");
     }
 });
