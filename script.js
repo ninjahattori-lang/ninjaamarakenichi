@@ -1,36 +1,31 @@
-document.getElementById("censusForm").addEventListener("submit", async function(e) {
+document.getElementById("censusForm").addEventListener("submit", async function(e){
+    
     e.preventDefault();
 
     const formData = new FormData(this);
     const data = {};
 
-    // Handle multiple values (like checkboxes)
     for (let [key, value] of formData.entries()) {
-        if (data[key]) {
+        if(data[key]){
             data[key] += ", " + value;
-        } else {
+        }
+        else{
             data[key] = value;
         }
     }
 
-    console.log("Sending Data:", data);  // For debugging
+    console.log(data);
 
     try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbyNf5npWvzgoNSutHpX5Lr5Ut5DzJhObyBCVG4oV19n78zpFAvhD4jfaEp2DkKruQCicA/exec", {
-            method: "POST",
-            body: formData   // ← Changed to FormData (Important!)
-            // Do NOT set Content-Type header when using FormData
+        await fetch("https://script.google.com/macros/s/AKfycbyNf5npWvzgoNSutHpX5Lr5Ut5DzJhObyBCVG4oV19n78zpFAvhD4jfaEp2DkKruQCicA/exec",{
+            method:"POST",
+            body: JSON.stringify(data)
         });
 
-        if (response.ok) {
-            alert("✅ Survey Saved Successfully!");
-            document.getElementById("censusForm").reset();
-        } else {
-            alert("❌ Failed to save. Please try again.");
-            console.error("Error:", response.status);
-        }
+        alert("Survey Saved Successfully!");
+        document.getElementById("censusForm").reset();
     } catch (error) {
-        console.error("Fetch Error:", error);
-        alert("❌ Network Error! Check your internet or script URL.");
+        console.error("Error:", error);
+        alert("Error saving data. Please check your internet or script URL.");
     }
 });
