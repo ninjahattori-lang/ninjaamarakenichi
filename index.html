@@ -1,0 +1,351 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<div class="max-w-5xl mx-auto py-8 px-4">
+<!-- HEADER -->
+<div class="bg-white rounded-3xl shadow-xl overflow-hidden mb-8">
+<div class="section-header text-white p-8">
+<div class="flex items-center gap-4">
+<i class="fa-solid fa-house text-5xl"></i>
+<div>
+<h1 class="text-3xl font-bold">
+जनगणना भवन एवं परिवार सर्वेक्षण
+</h1>
+<p class="text-blue-100 mt-1">
+आवास और परिवार विशेषताएँ
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<form id="censusForm" class="space-y-8">
+<!-- BASIC DETAILS -->
+<div class="bg-white rounded-3xl shadow-lg p-8">
+<h2 class="text-2xl font-bold mb-6 text-gray-800">
+मूल जानकारी
+</h2>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>1. लाइन नंबर</label>
+<input type="text" id="q1" name="1">
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>2. भवन नंबर</label>
+<input type="text" id="q2" name="2">
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>3. मकान नंबर</label>
+<input type="text" id="q3" name="3">
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>4. फर्श की सामग्री</label>
+<select id="q4" name="4">
+<option value="">चुनें</option>
+<option>मिट्टी</option>
+<option>लकड़ी/बांस</option>
+<option>जली ईंट</option>
+<option>पत्थर</option>
+<option>सीमेंट</option>
+<option>मोज़ेक/फर्श टाइल्स</option>
+<option>कोई अन्य</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>5. दीवार की सामग्री</label>
+<select id="q5" name="5">
+<option value="">चुनें</option>
+<option>घास/छप्पर/बांस</option>
+<option>प्लास्टिक/पॉलीथीन</option>
+<option>मिट्टी/अजली ईंट</option>
+<option>लकड़ी</option>
+<option>बिना मोर्टार का पत्थर</option>
+<option>मोर्टार वाला पत्थर</option>
+<option>जी.आई. शीट/धातु</option>
+<option>जली ईंट</option>
+<option>कंक्रीट</option>
+<option>कोई अन्य</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>6. छत की सामग्री</label>
+<select id="q6" name="6">
+<option value="">चुनें</option>
+<option>घास/छप्पर/बांस/लकड़ी</option>
+<option>प्लास्टिक/पॉलीथीन</option>
+<option>हाथ से बनी टाइल्स</option>
+<option>मशीन से बनी टाइल्स</option>
+<option>जली ईंट</option>
+<option>पत्थर</option>
+<option>स्लेट</option>
+<option>जी.आई. शीट/धातु</option>
+<option>कंक्रीट</option>
+<option>कोई अन्य</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>7. जनगणना भवन का उपयोग</label>
+<select id="q7" name="7">
+<option value="">चुनें</option>
+<option>निवास</option>
+<option>निवास सह अन्य उपयोग</option>
+<option>दुकान/कार्यालय</option>
+<option>स्कूल/कॉलेज</option>
+<option>होटल/लॉज</option>
+<option>अस्पताल</option>
+<option>कारखाना/कार्यशाला</option>
+<option>पूजा स्थल</option>
+<option>अन्य गैर-आवासीय</option>
+<option>खाली</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>8. मकान की स्थिति</label>
+<select id="q8" name="8">
+<option value="">चुनें</option>
+<option>अच्छी</option>
+<option>रहने योग्य</option>
+<option>जर्जर</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>9. परिवार नंबर</label>
+<input type="text" id="q9" name="9">
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>10. परिवार में रहने वाले कुल लोग</label>
+<input type="number" id="q10" name="10">
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>11. मुखिया का नाम</label>
+<input type="text" id="q11" name="11">
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>12. लिंग</label>
+<select id="q12" name="12">
+<option value="">चुनें</option>
+<option>पुरुष</option>
+<option>महिला</option>
+<option>ट्रांसजेंडर</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>13. श्रेणी</label>
+<select id="q13" name="13">
+<option value="">चुनें</option>
+<option>अनुसूचित जाति (SC)</option>
+<option>अनुसूचित जनजाति (ST)</option>
+<option>अन्य</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>14. स्वामित्व की स्थिति</label>
+<select id="q14" name="14">
+<option value="">चुनें</option>
+<option>स्वामित्व</option>
+<option>किराए का लेकिन कहीं और अपना मकान</option>
+<option>किराए का और कोई अपना मकान नहीं</option>
+<option>अन्य</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>15. कमरों की संख्या</label>
+<input type="number" id="q15" name="15">
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>16. विवाहित जोड़ों की संख्या</label>
+<input type="number" id="q16" name="16">
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>17. पेयजल का स्रोत</label>
+<select id="q17" name="17">
+<option value="">चुनें</option>
+<option>नल का पानी (शुद्ध)</option>
+<option>नल का पानी (अशुद्ध)</option>
+<option>कुआं</option>
+<option>हैंड पंप</option>
+<option>ट्यूबवेल/बोरवेल</option>
+<option>झरना</option>
+<option>नदी/नहर</option>
+<option>तालाब/ताल/झील</option>
+<option>बोतलबंद पानी</option>
+<option>कोई अन्य</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>18. पानी की उपलब्धता</label>
+<select id="q18" name="18">
+<option value="">चुनें</option>
+<option>परिसर के अंदर</option>
+<option>परिसर के निकट</option>
+<option>दूर</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>19. मुख्य प्रकाश का स्रोत</label>
+<select id="q19" name="19">
+<option value="">चुनें</option>
+<option>बिजली</option>
+<option>मिट्टी का तेल</option>
+<option>सौर ऊर्जा</option>
+<option>अन्य तेल</option>
+<option>अन्य</option>
+<option>कोई प्रकाश नहीं</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>20. शौचालय की उपलब्धता</label>
+<select id="q20" name="20">
+<option value="">चुनें</option>
+<option>हाँ निजी</option>
+<option>साझा</option>
+<option>सार्वजनिक शौचालय</option>
+<option>नहीं</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>21. शौचालय का प्रकार</label>
+<select id="q21" name="21">
+<option value="">चुनें</option>
+<option>पाइप सीवर</option>
+<option>सेप्टिक टैंक</option>
+<option>पिट शौचालय</option>
+<option>खुला नाला</option>
+<option>अन्य</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>22. अपशिष्ट जल निपटान</label>
+<select id="q22" name="22">
+<option value="">चुनें</option>
+<option>बंद नाला</option>
+<option>खुला नाला</option>
+<option>कोई नाला नहीं</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>23. स्नानघर की उपलब्धता</label>
+<select id="q23" name="23">
+<option value="">चुनें</option>
+<option>स्नानघर उपलब्ध</option>
+<option>बिना छत के</option>
+<option>नहीं</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>24. LPG/PNG कनेक्शन</label>
+<select id="q24" name="24">
+<option value="">चुनें</option>
+<option>LPG उपलब्ध</option>
+<option>LPG उपलब्ध नहीं</option>
+</select>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>25. खाना पकाने का मुख्य ईंधन</label>
+<select id="q25" name="25">
+<option value="">चुनें</option>
+<option>लकड़ी</option>
+<option>फसल अवशेष</option>
+<option>कोयला</option>
+<option>मिट्टी का तेल</option>
+<option>LPG/PNG</option>
+<option>बिजली</option>
+<option>बायोगैस</option>
+<option>अन्य</option>
+</select>
+</div>
+</div>
+</div>
+
+<!-- ASSETS -->
+<div class="bg-white rounded-3xl shadow-lg p-8">
+<h2 class="text-2xl font-bold mb-6 text-gray-800">
+संपत्ति एवं प्रौद्योगिकी
+</h2>
+<div class="mb-6">
+<h3 class="font-bold mb-3">26. रेडियो / ट्रांजिस्टर</h3>
+<div class="checkbox-grid">
+<label class="checkbox-item"><input type="checkbox" name="26" value="Traditional Radio Set">पारंपरिक रेडियो सेट</label>
+<label class="checkbox-item"><input type="checkbox" name="26" value="Mobile/Smartphone">मोबाइल/स्मार्टफोन</label>
+<label class="checkbox-item"><input type="checkbox" name="26" value="Other Device">अन्य उपकरण</label>
+<label class="checkbox-item"><input type="checkbox" name="26" value="No">नहीं</label>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="font-bold mb-3">27. टेलीविजन</h3>
+<div class="checkbox-grid">
+<label class="checkbox-item"><input type="checkbox" name="27" value="Free to Air">फ्री टू एयर</label>
+<label class="checkbox-item"><input type="checkbox" name="27" value="DTH">DTH</label>
+<label class="checkbox-item"><input type="checkbox" name="27" value="Cable">केबल</label>
+<label class="checkbox-item"><input type="checkbox" name="27" value="No">नहीं</label>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="font-bold mb-3">28. इंटरनेट सुविधा</h3>
+<div class="checkbox-grid">
+<label class="checkbox-item"><input type="checkbox" name="28" value="Laptop/Computer">लैपटॉप/कंप्यूटर</label>
+<label class="checkbox-item"><input type="checkbox" name="28" value="Mobile">मोबाइल</label>
+<label class="checkbox-item"><input type="checkbox" name="28" value="Other Device">अन्य उपकरण</label>
+<label class="checkbox-item"><input type="checkbox" name="28" value="No">नहीं</label>
+</div>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl mb-6">
+<label>29. लैपटॉप / कंप्यूटर</label>
+<select id="q29" name="29">
+<option value="">चुनें</option>
+<option>हाँ</option>
+<option>नहीं</option>
+</select>
+</div>
+<div class="mb-6">
+<h3 class="font-bold mb-3">30. फोन सुविधाएँ</h3>
+<div class="checkbox-grid">
+<label class="checkbox-item"><input type="checkbox" name="30" value="Telephone">टेलीफोन</label>
+<label class="checkbox-item"><input type="checkbox" name="30" value="Smartphone">स्मार्टफोन</label>
+<label class="checkbox-item"><input type="checkbox" name="30" value="Mobile Phone">मोबाइल फोन</label>
+<label class="checkbox-item"><input type="checkbox" name="30" value="No">नहीं</label>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="font-bold mb-3">31. वाहन</h3>
+<div class="checkbox-grid">
+<label class="checkbox-item"><input type="checkbox" name="31" value="Cycle">साइकिल</label>
+<label class="checkbox-item"><input type="checkbox" name="31" value="Scooter">स्कूटर</label>
+<label class="checkbox-item"><input type="checkbox" name="31" value="Bike">बाइक</label>
+<label class="checkbox-item"><input type="checkbox" name="31" value="Moped">मोपेड</label>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="font-bold mb-3">32. कार / जीप / वैन</h3>
+<div class="checkbox-grid">
+<label class="checkbox-item"><input type="checkbox" name="32" value="Car">कार</label>
+<label class="checkbox-item"><input type="checkbox" name="32" value="Jeep">जीप</label>
+<label class="checkbox-item"><input type="checkbox" name="32" value="Van">वैन</label>
+<label class="checkbox-item"><input type="checkbox" name="32" value="None">कोई नहीं</label>
+</div>
+</div>
+<div class="question-card bg-gray-50 p-5 rounded-2xl">
+<label>33. परिवार द्वारा खाया जाने वाला मुख्य अनाज</label>
+<select id="q33" name="33">
+<option value="">चुनें</option>
+<option value="Rice">चावल</option>
+<option value="Wheat">गेहूँ</option>
+<option value="Jowar">ज्वार</option>
+<option value="Bajra">बाजरा</option>
+<option value="Maize">मक्का</option>
+<option value="Other">कोई अन्य</option>
+</select>
+</div>
+</div>
+
+<!-- SUBMIT BUTTON -->
+<div class="text-center">
+<button
+type="submit"
+class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-2xl shadow-lg transition duration-300"
+>
+सर्वेक्षण सबमिट करें
+</button>
+</div>
+</form>
+</div>
