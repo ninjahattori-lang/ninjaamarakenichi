@@ -1,95 +1,34 @@
-/* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+document.getElementById("censusForm").addEventListener("submit", async function(e){
 
-body {
-    font-family: 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
-    background: #f3f4f6;
-    margin: 0;
-    padding: 20px 0;
-    line-height: 1.6;
+e.preventDefault();
+
+const formData = new FormData(this);
+
+const data = {};
+
+for (let [key, value] of formData.entries()) {
+
+if(data[key]){
+data[key] += ", " + value;
+}
+else{
+data[key] = value;
 }
 
-.section-header {
-    background: linear-gradient(135deg, #1d4ed8, #2563eb);
 }
 
-h1, h2, h3 {
-    font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
-}
+console.log(data);
 
-/* Question Cards */
-.question-card {
-    transition: all 0.3s ease;
-}
+await fetch("https://script.google.com/macros/s/AKfycbyNf5npWvzgoNSutHpX5Lr5Ut5DzJhObyBCVG4oV19n78zpFAvhD4jfaEp2DkKruQCicA/exec",{
 
-.question-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
+method:"POST",
 
-/* Labels */
-label {
-    font-weight: 500;
-    color: #374151;
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1.02rem;
-}
+body:JSON.stringify(data)
 
-/* Inputs & Selects */
-input, select {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #d1d5db;
-    border-radius: 12px;
-    background: white;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.2s ease;
-}
+});
 
-input:focus, 
-select:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
-}
+alert("Survey Saved Successfully!");
 
-/* Checkbox Grid */
-.checkbox-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 14px;
-}
+document.getElementById("censusForm").reset();
 
-.checkbox-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    padding: 14px 16px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.checkbox-item:hover {
-    background: #eff6ff;
-    border-color: #60a5fa;
-}
-
-.checkbox-item input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    accent-color: #2563eb;
-}
-
-/* Submit Button */
-button {
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-}
+});
