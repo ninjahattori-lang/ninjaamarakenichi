@@ -365,6 +365,15 @@
         </div>
     </form>
 </div>
+<script>
+// Temporary Debug Code
+console.log("Script is loaded ✅");
 
+document.getElementById("censusForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    console.log("✅ Form Submit Triggered!");
+    alert("Form Submit Working! (Debug Mode)");
+});
+</script>
 </body>
 </html>
