@@ -1,11 +1,11 @@
-/* census-style.css */
-
-/* Google Font - Must be linked in HTML */
+/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
 
 body {
     font-family: 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
     background: #f3f4f6;
+    margin: 0;
+    padding: 20px 0;
     line-height: 1.6;
 }
 
@@ -17,7 +17,7 @@ h1, h2, h3 {
     font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
 }
 
-/* Question Card */
+/* Question Cards */
 .question-card {
     transition: all 0.3s ease;
 }
@@ -36,7 +36,7 @@ label {
     font-size: 1.02rem;
 }
 
-/* Input & Select */
+/* Inputs & Selects */
 input, select {
     width: 100%;
     padding: 12px 14px;
@@ -84,18 +84,12 @@ select:focus {
     accent-color: #2563eb;
 }
 
-/* Buttons */
+/* Submit Button */
 button {
     transition: all 0.3s ease;
 }
 
 button:hover {
     transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
 }
-
-/* Utility */
-.text-gray-800 { color: #1f2937; }
-.font-bold { font-weight: 700; }
-.font-medium { font-weight: 500; }
-.rounded-2xl { border-radius: 16px; }
-.shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
